@@ -124,7 +124,25 @@ h1{
       justify-content: center;
       align-items: center;
 
-      
+      position: relative;
+
+    :hover{
+        color: $verde_agua;
+        background-color: $plomo_claro;
+        //color de borde:
+        border: 3px solid $verde_agua;
+
+        .bx-right-arrow-alt{
+            border: none;
+        }
+    }      
+}
+.bx-right-arrow-alt{
+    //centrar icono
+    position: absolute;
+    top: 50%;
+    margin-left: 10px;
+
 }
 .boton_generar{
     color: $plomo_oscuro;
@@ -139,8 +157,9 @@ h1{
     width: 100%;
   
     
-    
     cursor: pointer;
     margin-top: 20px;
+
+    
     
 }
