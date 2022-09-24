@@ -1,0 +1,68 @@
+.inputDiv{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+  
+  input[type='range'] {
+    display: block;
+    width: 100%;
+  }
+  
+  input[type='range']:focus {
+    outline: none;
+  }
+  
+  input[type='range'],
+  input[type='range']::-webkit-slider-runnable-track,
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    background-color: $verde_agua;
+    width: 21px;
+    height: 21px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    margin-top: -9px;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    background-color: $verde_agua;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+  }
+  
+  input[type=range]::-ms-thumb {
+    background-color: $verde_agua;
+    width: 21px;
+    height: 21px;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    background-color: $plomo_oscuro;
+    height: 5px;
+    -webkit-appearance: none;
+    background-image:linear-gradient(to right, $verde_agua calc(var(--value)*8.333%), $plomo_oscuro 0);
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    outline: none;
+  }
+  
+  input[type=range]::-moz-range-track {
+    -webkit-appearance: none;
+    background-image:linear-gradient(to right, $verde_agua calc(var(--value)*8.333%), $plomo_oscuro 0);
+    height: 5px;
+  }
+  
+  input[type=range]::-ms-track {
+    background-color: $plomo_oscuro;
+    height: 3px;
+  }
+  
+ 

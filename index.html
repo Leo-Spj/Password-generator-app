@@ -1,0 +1,84 @@
+<!-- https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Mis estilos CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    
+    <!-- boxicons.com -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Password Generator</title>
+</head>
+<body>
+
+    <main>
+        <section class="bloque_principal">
+            <h1>Password Generator</h1>
+            <form action="">
+                <div class="container_contra_generada">
+                    <p class="contra_generada"> <strong>SJC74NAS0HSMD983H4NS</strong> </p>
+                    <button class="icono_copy"><i class='bx bx-copy-alt' ></i></button>
+                </div> 
+
+                <div class="container_opciones">
+                    <div>
+                        <div class="encabezado_rango">
+                            <label for="password-length">Character Length</label>
+                            <p><strong class="etiqueta">10</strong></p>
+                        </div>
+                        
+                        <!-- StackOver -->
+                        <div class="inputDiv">
+                            
+                            <input type="range" value="3" min="0" max="12" autocomplete="off" id="input1">
+                        </div>
+                    
+                    </div>
+                    
+                    <!-- lista de utiles con ul: -->
+                    <ul class="lista_seguridad">
+                        <li>
+                            <input class="colorverde" type="checkbox" name="include-uppercase" id="include-uppercase" >
+                            <label for="include-uppercase">Include Uppercase Letters</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="include-lowercase" id="include-lowercase" checked>
+                            <label for="include-lowercase">Include Lowercase Letters</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="include-numbers" id="include-numbers" checked>
+                            <label for="include-numbers">Include Numbers</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="include-symbols" id="include-symbols" >
+                        <label for="include-symbols">Include Symbols</label>
+                        </li>
+                    </ul>
+
+                    <div class="container_generar">
+                        <button class="boton_generar" type="submit">GENERATE <i class='bx bx-right-arrow-alt bx-sm'></i></button>
+                        
+                    </div>
+                </div>
+            </form>
+        </section>       
+    </main>
+
+    <!-- Mis scripts -->
+    <script src="/index.js"></script>
+
+    
+    
+</body>
+</html>

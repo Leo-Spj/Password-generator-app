@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, main{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background-color: $plomo_oscuro;
+    color: $humo;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1{
+    font-size: 14px;
+    color: $plomo_sombra_claro;
+    text-align: center;
+    
+}
+
+.bloque_principal{   
+
+    height: min-content;
+    width: 360px;
+
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+
+}
+
+
+//------------------------//
+.container_contra_generada{
+    background-color: $plomo_claro;
+    height: 55px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    padding: 17px;
+
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+}
+.contra_generada{
+    
+    color: $plomo_sombra;
+
+    font-size: 22px;
+    
+    
+}
+.icono_copy{
+    background-color: $plomo_claro;
+    border: none;
+
+    //alinear icono
+    display: flex;
+    justify-content: center;
+    
+    .bx-copy-alt{
+        color: $verde_agua;
+        font-size: 20px;
+    }
+
+    cursor: pointer;
+}
+
+//------------------------//
+
+.container_opciones{
+    background-color: $plomo_claro;
+    height: min-content;
+
+    padding: 17px;
+}
+.encabezado_rango{
+    color: $humo;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    label{
+        font-size: 12px;
+    }
+    p{
+        color: $verde_agua;
+        font-size: 17px;
+    }
+}
+
+.lista_seguridad{
+    line-height: 25px;
+    list-style:none;
+    
+    color: $humo;
+
+    
+    
+}
+
+//coloreando checkbox:
+
+.colorverde input:checked ~ .checkmark {
+    background-color: $verde_agua;
+}
+
+
+
+
+//boton generar password
+.container_generar{
+      //alinear centrado:
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      
+}
+.boton_generar{
+    color: $plomo_oscuro;
+    background-color:$verde_agua;
+
+    border: none;
+
+    font-size: 12px;
+    font-weight: 800;
+    
+    height: 45px;
+    width: 100%;
+  
+    
+    
+    cursor: pointer;
+    margin-top: 20px;
+    
+}
