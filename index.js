@@ -1,31 +1,12 @@
 
-//para el input
-  var Input = document.querySelector('#input1');
-  Input.style.setProperty("--value", Input.value);
+// escucha el valor del input tipe range por id e e innerhtml en etiqueta: 
+const range = document.getElementById('range');
+const etiqueta = document.querySelector('.etiqueta_log');
 
-  if (Input) {
+range.addEventListener('input', function() {
+    let long_contra = (parseInt(range.value)+8);
+    etiqueta.innerHTML = long_contra;
+    range.style.setProperty("--value", (parseInt(range.value))); 
+});
 
-    var w = parseInt(window.getComputedStyle(Input, null).getPropertyValue('width'));
-
-    
-
-    Input.addEventListener("input", 
-        function(evt) {
-            Input.style.setProperty("--value", Input.value);
-        }, 
-    false);
-
-    //para la etiqueta
-    var etq = document.querySelector('.etiqueta');
-    if (etq) {
-        
-        etq.innerHTML =parseInt(Input.value)+8;
-
-        
-        Input.addEventListener('input', function() {
-        
-            etq.innerHTML = parseInt(Input.value)+8;
-            
-        }, false);
-    }
-}
+range.style.setProperty("--value", (parseInt(range.value)))
