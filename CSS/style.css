@@ -173,6 +173,21 @@ h1 {
   outline: none;
   border: none; }
 
+.contacto {
+  color: #E6E5EA;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px; }
+  .contacto a {
+    color: #A6FFAD;
+    text-decoration: none; }
+  .contacto a:hover {
+    color: #54525B; }
+  .contacto .container_redes {
+    margin-top: 10px;
+    margin-bottom: 20px; }
+
 .inputDiv {
   margin-top: 20px;
   margin-bottom: 20px; }

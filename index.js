@@ -1,4 +1,5 @@
 
+
 // escucha el valor del input tipe range por id e e innerhtml en etiqueta: 
 const range = document.getElementById('range');
 const etiqueta = document.querySelector('.etiqueta_log');
@@ -90,7 +91,7 @@ var contador = 3;
 var fortaleza_check = 2;
 var checkbox = document.querySelectorAll('input[type=checkbox]');
 for (var i = 0; i < checkbox.length; i++) {
-    checkbox[i].addEventListener('change', function() {
+    checkbox[i].addEventListener('change', function () {
         if (this.checked) {
             contador++;
             console.log("casillas activas: " + contador);
@@ -136,34 +137,34 @@ const barra_n_4 = document.getElementById('br_4');
 
 fortaleza()
 function fortaleza() {
-    if (fortaleza_check + fortaleza_rango == 1) {
+    if (fortaleza_check != 0 && fortaleza_check + fortaleza_rango == 1) {
         barra_n_1.classList.add('activado');
         barra_n_2.classList.remove('activado');
         barra_n_3.classList.remove('activado');
         barra_n_4.classList.remove('activado');
 
-        niv_fort_escrita.innerHTML = "BAJA";
+        niv_fort_escrita.innerHTML = "LOW";
     } else if (fortaleza_check + fortaleza_rango == 2) {
         barra_n_1.classList.add('activado');
         barra_n_2.classList.add('activado');
         barra_n_3.classList.remove('activado');
         barra_n_4.classList.remove('activado');
 
-        niv_fort_escrita.innerHTML = "MEDIA";
+        niv_fort_escrita.innerHTML = "MEDIUM";
     } else if (fortaleza_check + fortaleza_rango == 3) {
         barra_n_1.classList.add('activado');
         barra_n_2.classList.add('activado');
         barra_n_3.classList.add('activado');
         barra_n_4.classList.remove('activado');
 
-        niv_fort_escrita.innerHTML = "ALTA";
+        niv_fort_escrita.innerHTML = "HIGH";
     } else if (fortaleza_check + fortaleza_rango == 4) {
         barra_n_1.classList.add('activado');
         barra_n_2.classList.add('activado');
         barra_n_3.classList.add('activado');
         barra_n_4.classList.add('activado');
 
-        niv_fort_escrita.innerHTML = "FUERTE";
+        niv_fort_escrita.innerHTML = "STRONG";
     } else{
         barra_n_1.classList.remove('activado');
         barra_n_2.classList.remove('activado');
@@ -178,6 +179,18 @@ function fortaleza() {
 
 
 
+//se carga la pagina con una contraseña aleatoria de mayusculas, minusculas y numeros.
+rerere()
+function rerere() {
+    let alcargar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+   
+    let aleatorio = "";
+    for (let i = 0; i < 10; i++) {
+        aleatorio += alcargar.charAt(Math.floor(Math.random() * alcargar.length));
+    }
+    contra_generada.value = aleatorio;
+    
+}   
 
 
 
