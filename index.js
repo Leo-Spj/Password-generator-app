@@ -2,11 +2,22 @@
 // escucha el valor del input tipe range por id e e innerhtml en etiqueta: 
 const range = document.getElementById('range');
 const etiqueta = document.querySelector('.etiqueta_log');
-
+var fortaleza_rango = 0;
 range.addEventListener('input', function() {
     let long_contra = (parseInt(range.value)+8);
     etiqueta.innerHTML = long_contra;
-    range.style.setProperty("--value", (parseInt(range.value))); 
+    range.style.setProperty("--value", (parseInt(range.value)));
+    
+    
+    
+// actualizando rango de fortaleza:
+    if (long_contra > 13 && fortaleza_check > 0){ 
+            fortaleza_rango = 1;
+            fortaleza();
+    } else {
+        fortaleza_rango = 0;
+        fortaleza();        
+    }
 });
 range.style.setProperty("--value", (parseInt(range.value)));
 
@@ -67,14 +78,101 @@ boton_generar.addEventListener('click', function() {
     
     //alerta
     if (caracteres().length == 0) {
-        alert('Por favor, seleccione al menos una opción');
+        contra_generada.value = "🤢🤢🤢";
     }
 
 });
 
 
+//escuchar los eventos de los checkbox
+//  contador = 3 dado que la pagina carga con 3 casillas marcadas.
+var contador = 3;
+var fortaleza_check = 2;
+var checkbox = document.querySelectorAll('input[type=checkbox]');
+for (var i = 0; i < checkbox.length; i++) {
+    checkbox[i].addEventListener('change', function() {
+        if (this.checked) {
+            contador++;
+            console.log("casillas activas: " + contador);
+            
+        } else {
+            contador--;
+            console.log("casillas activas: " + contador);
+        }
+
+        if (contador == 0) {
+            fortaleza_check = 0;
+            console.log("fortaleza: " + fortaleza_check);
+        }
+        if (contador == 1) {
+            fortaleza_check = 1;
+            console.log("fortaleza: " + fortaleza_check);
+        }
+        if (contador == 2) {
+            fortaleza_check = 1 ;
+            console.log("Fortaleza checkbx: " + fortaleza_check);
+        }
+        if (contador == 3) {
+            fortaleza_check = 2;
+            console.log("Fortaleza checkbx: " + fortaleza_check);
+        }
+        if (contador == 4) {
+            fortaleza_check = 3;
+            console.log("Fortaleza checkbx: " + fortaleza_check);
+        } 
+
+        fortaleza()
+    });
+}
+
+//segun la cantidad de fortaleza_check  se añade la clase "activo" a los div barra_niv:
+const niv_fort_escrita = document.getElementById('niv_fort_escrita');
+
+const barra_n_1 = document.getElementById('br_1');
+const barra_n_2 = document.getElementById('br_2');
+const barra_n_3 = document.getElementById('br_3');
+const barra_n_4 = document.getElementById('br_4');
 
 
+fortaleza()
+function fortaleza() {
+    if (fortaleza_check + fortaleza_rango == 1) {
+        barra_n_1.classList.add('activado');
+        barra_n_2.classList.remove('activado');
+        barra_n_3.classList.remove('activado');
+        barra_n_4.classList.remove('activado');
+
+        niv_fort_escrita.innerHTML = "BAJA";
+    } else if (fortaleza_check + fortaleza_rango == 2) {
+        barra_n_1.classList.add('activado');
+        barra_n_2.classList.add('activado');
+        barra_n_3.classList.remove('activado');
+        barra_n_4.classList.remove('activado');
+
+        niv_fort_escrita.innerHTML = "MEDIA";
+    } else if (fortaleza_check + fortaleza_rango == 3) {
+        barra_n_1.classList.add('activado');
+        barra_n_2.classList.add('activado');
+        barra_n_3.classList.add('activado');
+        barra_n_4.classList.remove('activado');
+
+        niv_fort_escrita.innerHTML = "ALTA";
+    } else if (fortaleza_check + fortaleza_rango == 4) {
+        barra_n_1.classList.add('activado');
+        barra_n_2.classList.add('activado');
+        barra_n_3.classList.add('activado');
+        barra_n_4.classList.add('activado');
+
+        niv_fort_escrita.innerHTML = "FUERTE";
+    } else{
+        barra_n_1.classList.remove('activado');
+        barra_n_2.classList.remove('activado');
+        barra_n_3.classList.remove('activado');
+        barra_n_4.classList.remove('activado');
+
+        niv_fort_escrita.innerHTML = "Niv.";
+    }
+}
 
 
 

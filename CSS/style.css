@@ -163,9 +163,9 @@ h1 {
   border: none; }
 
 .contra_generada {
-  background-color: #24232B;
+  background-color: transparent;
   border: none;
-  height: 28px;
+  height: 30px;
   width: 100%;
   resize: none; }
 
@@ -173,10 +173,6 @@ h1 {
   outline: none;
   border: none; }
 
-/*
-//si no hay ninguna casilla activa, se muestra un mensaje de error:
-   
-    */
 .inputDiv {
   margin-top: 20px;
   margin-bottom: 20px; }

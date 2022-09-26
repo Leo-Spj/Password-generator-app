@@ -232,9 +232,9 @@ h1{
 
 //estilos de la caja de contraseña, la cual se copia al portapapeles
 .contra_generada{
-    background-color: $plomo_claro;
+    background-color: transparent;
     border: none;
-    height: 28px;
+    height: 30px;
     width: 100%;
     resize: none;
     
@@ -243,7 +243,3 @@ h1{
     outline: none;
     border: none;
 }
-/*
-//si no hay ninguna casilla activa, se muestra un mensaje de error:
-   
-    */
