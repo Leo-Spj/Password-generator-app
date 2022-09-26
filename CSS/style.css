@@ -53,7 +53,8 @@ h1 {
 .container_opciones {
   background-color: #24232B;
   height: min-content;
-  padding: 17px; }
+  padding: 17px;
+  margin-bottom: 40px; }
 
 .encabezado_rango {
   color: #E6E5EA;
@@ -177,10 +178,9 @@ h1 {
   color: #E6E5EA;
   font-size: 12px;
   font-weight: 700;
-  text-align: center;
-  margin-top: 20px; }
+  text-align: center; }
   .contacto a {
-    color: #A6FFAD;
+    color: #F9CF66;
     text-decoration: none; }
   .contacto a:hover {
     color: #54525B; }
