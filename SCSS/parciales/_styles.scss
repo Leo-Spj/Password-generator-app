@@ -229,6 +229,21 @@ h1{
     border: none;
 }
 
-.lista_seguridad input[type='checkbox']:checked{
-    background-color: $verde_agua;
+
+//estilos de la caja de contraseña, la cual se copia al portapapeles
+.contra_generada{
+    background-color: $plomo_claro;
+    border: none;
+    height: 28px;
+    width: 100%;
+    resize: none;
+    
 }
+.contra_generada:focus{
+    outline: none;
+    border: none;
+}
+/*
+//si no hay ninguna casilla activa, se muestra un mensaje de error:
+   
+    */

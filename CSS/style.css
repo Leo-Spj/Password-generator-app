@@ -162,9 +162,21 @@ h1 {
   background-color: #F9CF66;
   border: none; }
 
-.lista_seguridad input[type='checkbox']:checked {
-  background-color: #A6FFAD; }
+.contra_generada {
+  background-color: #24232B;
+  border: none;
+  height: 28px;
+  width: 100%;
+  resize: none; }
 
+.contra_generada:focus {
+  outline: none;
+  border: none; }
+
+/*
+//si no hay ninguna casilla activa, se muestra un mensaje de error:
+   
+    */
 .inputDiv {
   margin-top: 20px;
   margin-bottom: 20px; }

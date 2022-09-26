@@ -27,8 +27,8 @@
             <h1>Password Generator</h1>
             <form action="">
                 <div class="container_contra_generada">
-                    <p class="contra_generada">PTx1f5DaFX </p>
-                    <button class="icono_copy"><i class='bx bx-copy-alt' ></i></button>
+                    <textarea class="contra_generada" id="contra_generada">PTx1f5DaFX </textarea>
+                    <button type="button" class="icono_copy" id="icono_copy"><i class='bx bx-copy-alt' ></i></button>
                 </div> 
 
                 <div class="container_opciones">
@@ -52,7 +52,7 @@
                             <label for="include-uppercase">Include Uppercase Letters</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="include-lowercase" id="include-lowercase" >
+                            <input type="checkbox" name="include-lowercase" id="include-lowercase" checked>
                             <label for="include-lowercase">Include Lowercase Letters</label>
                         </li>
                         <li>
@@ -81,7 +81,8 @@
                     </div>
 
                     <div class="container_generar">
-                        <button class="boton_generar" type="submit">GENERATE <i class='bx bx-right-arrow-alt bx-sm'></i></button>    
+                        <button type="button" class="boton_generar"
+                        id="boton_generar" type="submit">GENERATE <i class='bx bx-right-arrow-alt bx-sm'></i></button>    
                     </div>
                 </div>
             </form>
