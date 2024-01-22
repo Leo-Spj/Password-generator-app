@@ -1,4 +1,4 @@
-
+import { generarPassword } from 'generador-de-contrasenas';
 
 // escucha el valor del input tipe range por id e e innerhtml en etiqueta: 
 const range = document.getElementById('range');
@@ -47,41 +47,22 @@ const c_numeros = '0123456789';
 const c_caracteres = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
 
 boton_generar.addEventListener('click', function() {
+    let long_contra = parseInt(range.value) + 8;
 
-    let long_contra = (parseInt(range.value)+8);
-    let contra = '';
-    
-    //si las casillas de mayusculas, minusculas, numeros y caracteres estan activas, se agregan a la variable sum_caracteres:
-    function caracteres() {
-    let sum_caracteres = '';
-    if (mayusculas.checked) {
-        sum_caracteres += c_mayusculas;
-    }
-    if (minusculas.checked) {
-        sum_caracteres += c_munisculas;
-    }
-    if (numeros.checked) {
-        sum_caracteres += c_numeros;
-    }
-    if (symbols.checked) {
-        sum_caracteres += c_caracteres;
-    }
-    return sum_caracteres;
-    }
-    
-   //se genera la contraseña aleatoria:
-    for (let i = 0; i < long_contra; i++) {
-        let random = Math.floor(Math.random() * caracteres().length);
-        
-        contra += caracteres()[random];
-    }
+    // La funcion generarPassword la cree como un paquete npm
+    let contra = generarPassword(
+        long_contra,
+        mayusculas.checked,
+        minusculas.checked,
+        numeros.checked,
+        symbols.checked
+    );
     contra_generada.value = contra;
-    
-    //alerta
-    if (caracteres().length == 0) {
+
+    // alerta
+    if (contra.length === 0) {
         contra_generada.value = "🤢🤢🤢";
     }
-
 });
 
 
