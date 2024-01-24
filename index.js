@@ -1,5 +1,18 @@
 import { generarPassword } from 'generador-de-contrasenas';
 
+
+window.addEventListener('touchend', function(event) {
+    if (event.detail === 2) {  // si es un doble tap
+        event.preventDefault();  // prevenir el comportamiento predeterminado
+    }
+});
+
+document.querySelector('main').addEventListener('dblclick', function(event) {
+    event.preventDefault();
+});
+
+
+
 // escucha el valor del input tipe range por id e e innerhtml en etiqueta: 
 const range = document.getElementById('range');
 const etiqueta = document.querySelector('.etiqueta_log');
@@ -10,8 +23,7 @@ range.addEventListener('input', function() {
     range.style.setProperty("--value", (parseInt(range.value)));
     
     
-    
-// actualizando rango de fortaleza:
+    // actualizando rango de fortaleza:
     if (long_contra > 13 && fortaleza_check > 0){ 
             fortaleza_rango = 1;
             fortaleza();
@@ -21,6 +33,8 @@ range.addEventListener('input', function() {
     }
 });
 range.style.setProperty("--value", (parseInt(range.value)));
+
+
 
 //al clicar en icono_copy, se copia el contenido de contra_generada en el portapapeles:
 const contra_generada = document.getElementById('contra_generada');
@@ -33,6 +47,8 @@ icono_copy.addEventListener('click', function() {
     alert("Contraseña copiada al portapapeles");
 });
 
+
+
 //al clicar en boton_generar, se genera una contraseña aleatoria:
 const boton_generar = document.getElementById('boton_generar');
 
@@ -41,15 +57,11 @@ const minusculas = document.getElementById('include-lowercase');
 const numeros = document.getElementById('include-numbers');
 const symbols = document.getElementById('include-symbols');
 
-const c_mayusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const c_munisculas = 'abcdefghijklmnopqrstuvwxyz';
-const c_numeros = '0123456789';
-const c_caracteres = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
 
 boton_generar.addEventListener('click', function() {
     let long_contra = parseInt(range.value) + 8;
 
-    // La funcion generarPassword la cree como un paquete npm
+    // La funcion generarPassword la cree como un paquete NPM
     let contra = generarPassword(
         long_contra,
         mayusculas.checked,
@@ -161,17 +173,7 @@ function fortaleza() {
 
 
 //se carga la pagina con una contraseña aleatoria de mayusculas, minusculas y numeros.
-rerere()
-function rerere() {
-    let alcargar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-   
-    let aleatorio = "";
-    for (let i = 0; i < 10; i++) {
-        aleatorio += alcargar.charAt(Math.floor(Math.random() * alcargar.length));
-    }
-    contra_generada.value = aleatorio;
-    
-}   
+contra_generada.value = generarPassword(10, true, true, true, false);
 
 
 

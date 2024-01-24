@@ -6,7 +6,7 @@
 html, main {
   font-family: 'Ubuntu Mono', monospace;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   background-image: linear-gradient(180deg, #171717 0, #08060c 50%, #000000 100%);
   color: #E6E5EA;
   height: 100vh;
@@ -18,8 +18,10 @@ h1 {
   text-align: center; }
 
 .bloque_principal {
-  height: min-content;
-  width: 355px;
+  width: 100%;
+  max-width: 430px;
+  min-width: 280px;
+  padding: 0.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,6 +41,10 @@ h1 {
   color: #E6E5EA;
   font-size: 22px;
   font-weight: 700; }
+
+textarea:disabled {
+  color: #E6E5EA;
+  opacity: 1; }
 
 .icono_copy {
   background-color: #24232B;
@@ -78,12 +84,19 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative; }
-  .container_generar :hover {
-    color: #A6FFAD;
-    background-color: #24232B;
-    border: 3px solid #A6FFAD; }
-    .container_generar :hover .bx-right-arrow-alt {
-      border: none; }
+  @media (hover: hover) and (pointer: fine) {
+    .container_generar .boton_generar:hover {
+      color: #A6FFAD;
+      background-color: #24232B;
+      border: 3px solid #A6FFAD; }
+      .container_generar .boton_generar:hover .bx-right-arrow-alt {
+        border: none; }
+    .container_generar .boton_generar:active {
+      color: #A6FFAD;
+      background-color: #24232B;
+      border: 3px solid #A6FFAD; }
+      .container_generar .boton_generar:active .bx-right-arrow-alt {
+        border: none; } }
 
 .bx-right-arrow-alt {
   position: absolute;
@@ -176,7 +189,7 @@ h1 {
 
 .contacto {
   color: #E6E5EA;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   text-align: center; }
   .contacto a {

@@ -7,7 +7,7 @@
 html, main{
     font-family: 'Ubuntu Mono', monospace;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
 
     //background-image GENERADO en: https://mybrandnewlogo.com/color-gradient-generator
     background-image: linear-gradient(180deg, #171717 0, #08060c 50%, #000000 100%);
@@ -25,16 +25,16 @@ h1{
 }
 
 .bloque_principal{   
+    width: 100%;
+    max-width: 430px;
+    min-width: 280px;
 
-    height: min-content;
-    width: 355px;
-
+    padding: 0.5rem;
     
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);   
-
 }
 
 
@@ -60,9 +60,14 @@ h1{
 
     font-size: 22px;
     font-weight: 700;
-    
-    
+      
 }
+
+textarea:disabled {
+    color: $humo;
+    opacity: 1;
+}
+
 .icono_copy{
     background-color: $plomo_claro;
     border: none;
@@ -126,23 +131,41 @@ h1{
 
       position: relative;
 
-    :hover{
-        color: $verde_agua;
-        background-color: $plomo_claro;
-        //color de borde:
-        border: 3px solid $verde_agua;
+    @media (hover: hover) and (pointer: fine) {
+        .boton_generar:hover {
+            // estilos del botón en hover
+            color: $verde_agua;
+            background-color: $plomo_claro;
+            border: 3px solid $verde_agua;
 
-        .bx-right-arrow-alt{
-            border: none;
+            .bx-right-arrow-alt {
+                border: none;
+            }
         }
-    }      
-}
+
+        .boton_generar:active {
+            // botón cuando se presiona
+            color: $verde_agua;
+            background-color: $plomo_claro;
+            border: 3px solid $verde_agua;
+
+            .bx-right-arrow-alt {
+                border: none;
+            }
+        }
+    }
+        
+    
+    
+}  
+
+
+
 .bx-right-arrow-alt{
     //centrar icono
     position: absolute;
     top: 50%;
     margin-left: 10px;
-
 }
 .boton_generar{
     color: $plomo_oscuro;
@@ -247,7 +270,7 @@ h1{
 
 .contacto{
     color: $humo;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     text-align: center;
     
