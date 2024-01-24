@@ -27,7 +27,7 @@
             <h1>Password Generator</h1>
             <form action="">
                 <div class="container_contra_generada">
-                    <textarea class="contra_generada" id="contra_generada">JavaScript not working</textarea>
+                    <textarea class="contra_generada" id="contra_generada">JavaScript is required</textarea>
                     <button type="button" class="icono_copy" id="icono_copy"><i class='bx bx-copy-alt' ></i></button>
                 </div> 
 
@@ -47,21 +47,33 @@
                     
                     <!-- lista de utiles con ul: -->
                     <ul class="lista_seguridad">
-                        <li>
-                            <input class="colorverde" type="checkbox" name="include-uppercase" id="include-uppercase" checked>
+                        <li class="ops-inclusion">
+                            <label class="container">
+                                <input class="colorverde" type="checkbox" name="include-uppercase" id="include-uppercase" checked>
+                                <div class="checkmark"></div>
+                            </label>
                             <label for="include-uppercase">Include Uppercase Letters</label>
                         </li>
-                        <li>
-                            <input type="checkbox" name="include-lowercase" id="include-lowercase" checked>
+                        <li class="ops-inclusion">
+                            <label class="container">
+                                <input type="checkbox" name="include-lowercase" id="include-lowercase" checked>
+                                <div class="checkmark"></div>
+                            </label>
                             <label for="include-lowercase">Include Lowercase Letters</label>
                         </li>
-                        <li>
-                            <input type="checkbox" name="include-numbers" id="include-numbers" checked>
+                        <li class="ops-inclusion">
+                            <label class="container">
+                                <input type="checkbox" name="include-numbers" id="include-numbers" checked>
+                                <div class="checkmark"></div>
+                            </label>
                             <label for="include-numbers">Include Numbers</label>
                         </li>
-                        <li>
-                            <input type="checkbox" name="include-symbols" id="include-symbols" >
-                        <label for="include-symbols">Include Symbols</label>
+                        <li class="ops-inclusion">
+                            <label class="container">
+                                <input type="checkbox" name="include-symbols" id="include-symbols">
+                                <div class="checkmark"></div>
+                            </label>
+                            <label for="include-symbols">Include Symbols</label>
                         </li>
                     </ul>
 
@@ -117,7 +129,7 @@
 
     <!-- Mis scripts -->
     <script src="dist/bundle.js"></script>
-    <script type="module" src="index.js"></script>
+    <script src="index.js"></script>
 
     
     
